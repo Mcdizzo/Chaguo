@@ -1,0 +1,9 @@
+# Web app
+flask
+
+# Guidebook pipeline
+requests
+beautifulsoup4
+python-dotenv
+groq
+pymupdf

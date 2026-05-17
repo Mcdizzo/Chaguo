@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chaguo — Find Your University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <main>
+    <header>
+      <div class="logo">Soma<span class="dot">.</span></div>
+      <p class="tagline">Enter your A-Level results.<br/>We'll show you where you belong.</p>
+    </header>
+
+    <section class="input-section" id="inputSection">
+      <div class="subjects-list" id="subjectsList"></div>
+
+      <button class="add-btn" id="addSubjectBtn">
+        <span class="plus">+</span> Add Subject
+      </button>
+
+      <div class="actions">
+        <button class="find-btn" id="findBtn">Find My Programs</button>
+      </div>
+    </section>
+
+    <section class="results-section hidden" id="resultsSection">
+      <div class="results-header">
+        <h2 id="resultsTitle">Programs you qualify for</h2>
+        <button class="back-btn" id="backBtn">← New Search</button>
+      </div>
+
+      <div class="results-search" id="resultsSearch">
+        <div class="search-mode" role="radiogroup" aria-label="Search by">
+          <label class="mode-option">
+            <input type="radio" name="searchMode" value="university" checked />
+            <span>University</span>
+          </label>
+          <label class="mode-option">
+            <input type="radio" name="searchMode" value="program" />
+            <span>Program</span>
+          </label>
+        </div>
+        <input
+          type="search"
+          id="resultsSearchInput"
+          class="results-search-input"
+          placeholder="Search by university name…"
+          autocomplete="off"
+        />
+        <p class="search-hint" id="searchHint"></p>
+      </div>
+
+      <div class="results-grid" id="resultsGrid"></div>
+    </section>
+  </main>
+
+  <template id="subjectRowTemplate">
+    <div class="subject-row">
+      <input
+        type="text"
+        class="subject-input"
+        placeholder="Subject (e.g. Physics)"
+        list="subjectSuggestions"
+      />
+      <select class="grade-select">
+        <option value="">Grade</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+        <option value="S">S — Subsidiary</option>
+        <option value="F">F</option>
+      </select>
+      <select class="level-select">
+        <option value="principal">Principal</option>
+        <option value="subsidiary">Subsidiary</option>
+      </select>
+      <button class="remove-btn">×</button>
+    </div>
+  </template>
+
+  <datalist id="subjectSuggestions">
+    <option value="Advanced Mathematics">
+    <option value="Basic Applied Mathematics">
+    <option value="Physics">
+    <option value="Chemistry">
+    <option value="Biology">
+    <option value="Geography">
+    <option value="History">
+    <option value="Economics">
+    <option value="Commerce">
+    <option value="Accountancy">
+    <option value="Computer Science">
+    <option value="English Language">
+    <option value="Kiswahili">
+    <option value="Agriculture">
+    <option value="Nutrition">
+    <option value="Fine Arts">
+    <option value="French">
+    <option value="Arabic">
+    <option value="Literature in English">
+  </datalist>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
